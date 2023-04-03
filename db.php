@@ -1,7 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=inlogdatabase", $username, $password);
