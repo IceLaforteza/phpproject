@@ -50,3 +50,19 @@ if(isset($_POST['btn_add_post']))
         <?php require_once "tweet.php"; ?>
     </div>
 </div>
+
+<?php require_once "rechts-sidebar.php"; ?>
+
+<?php
+if(isset($_GET['del']))
+{
+    $Del_ID = $_GET['del'];
+    $sql = "DELETE FROM posts WHERE post_id='$Del_ID'";
+    $post_query = mysqli_query($con,$sql);
+
+    if ($post_query)
+    {
+        header("location: index.php");
+        exit(); // Add exit() after the header to prevent further execution of the code
+    }
+}

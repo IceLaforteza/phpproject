@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 @import "tweet-box.css";
+@import "links-sidebar.css";
+@import "rechts-sidebar.css";
 
 
 :root {
@@ -116,7 +118,7 @@ textarea{
         padding: 15px 10px;
         display: block;
     }
-    .sidebar ul il span, .sidebar_tweet, .rechts_sidebar{
+    .sidebar ul li span, .sidebar_tweet, .rechts_sidebar{
         display: none;
     }
 
