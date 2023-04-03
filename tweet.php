@@ -2,7 +2,7 @@
 
 $query = "SELECT * FROM posts ORDER BY post_id DESC";
 $data = mysqli_query($con,$query);
-
+global $conn;
 while($row = mysqli_detch_assoc($data))
 {
     $post_text = $row['post_text'];
