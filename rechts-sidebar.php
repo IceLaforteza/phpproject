@@ -1,5 +1,5 @@
-<div class="rechts_sidebar">
-    <div class="zoek-container">
+<div class="right_sidebar">
+    <div class="search-container">
         <a href="#" class="search-btn">
             <i class="fa fa-search"></i>
         </a>
@@ -12,7 +12,7 @@
             <i class="fa fa-cog"></i>
         </div>
 
-        <div class="trends_lichaam">
+        <div class="trends_body">
             <div class="trend">
                 <span>Trending</span>
                 <p>#JoaoEnIceDaten</p>
@@ -21,7 +21,7 @@
                 <span>Trending</span>
                 <p>#IceKomtUitDeKast</p>
             </div>
-            <div class="trends_meer-zien">
+            <div class="trends_more-show">
                 <a href="">Meer zien</a>
             </div>
         </div>

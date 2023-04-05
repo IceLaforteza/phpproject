@@ -1,10 +1,10 @@
-.rechts_sidebar{
+.right_sidebar{
     position: sticky;
     top: 0;
     height: 100vh;
 }
 
-.zoek-container{
+.search-container{
     background-color: var(--twitter-background);
     border-radius: 30px;
     padding: 10px;
@@ -14,7 +14,7 @@
     border: 1px solid var(--twitter-background);
 }
 
-.zoek-container .zoek-input{
+.search-container .search-input{
     border: none;
     outline: none;
     font-weight: 500;
@@ -23,7 +23,7 @@
 
 }
 
-.zoek-container .zoek-btn, fa{
+.search-container .search-btn{
     color: rgb(101,119,134);
     font-size: 16px;
     margin-right: 5px;
@@ -50,28 +50,28 @@
     padding: 15px;
 }
 
-.trend:hover, .trends_meer-zien{
+.trend:hover, .trends_more-show{
     background: rgb(231,233,235);
 }
-.trends_meer-zien{
+.trends_more-show{
     padding: 15px;
 }
 
-.trends_meer-zien a{
+.trends_more-show a{
     color: var(--twitter-color);
 }
 
-.trends_meer-zien:hover{
+.trends_more-show:hover{
     border-bottom-left-radius:15px;
-    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
 }
 
-.trends_lichaam span{
+.trends_body span{
     font-size: 14px;
     color: rgb(101,119,134);
 }
 
-.trends_lichaam p{
+.trends_body p{
     font-weight: 700;
 }
 
