@@ -2,23 +2,24 @@
 // Replace the placeholders with your actual database credentials
 $host = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "twitter-clone-project";
 
 // Create a connection to the database
-$con = mysqli_connect($host, $username, $password, $dbname);
+require("db.php");
 
 // Check if the connection was successful
-if (!$con) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+//if (!$conn) {
+ //   die("Connection failed: " . mysqli_connect_error());
+//}
 
 // Execute the query
-$query = "SELECT * FROM posts ORDER BY post_id DESC";
-$data = mysqli_query($con, $query);
+$sql = "SELECT * FROM posts ORDER BY post_id DESC";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
 
-if ($data) {
-    while ($row = mysqli_fetch_assoc($data)) {
+if (true) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $post_text = $row['post_text'];
         $post_date = $row['post_date'];
         ?>
@@ -60,5 +61,5 @@ if ($data) {
 }
 
 // Close the database connection
-mysqli_close($con);
+$conn = null;
 ?>
