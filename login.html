@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>Login</title>
+</head>
+<body>
+<div class="loginBox">
+
+    <img src="fotos/logo.png" class="logo">
+
+    <h2>Sign in with Twitter</h2>
+
+    <button><img src="fotos/google.png">Sign in with Google</button>
+
+    <button><img src="fotos/apple.png">Sign in with Apple</button>
+
+    <hr>
+
+    <!-- Horizontal line -->
+
+    <span>Or</span>
+
+    <form method="post" action="login.php">
+        <label for="name">Username</label>
+        <input type="text" name="username" size="20" required>
+
+        <br>
+        <br>
+
+        <label for="password">Password</label>
+        <input type="text" name="password" size="20" required >
+
+        <br>
+
+        <input type="submit" value="Login" name="btnsubmit">
+    </form>
+</body>
+</html>
