@@ -1,42 +1,23 @@
-<!DOCTYPE html>
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+include("db.php");
 
-<html>
+$username = $_POST["username"];
+$password = $_POST["password"];
 
-<head>
+$stmt = $conn->prepare("SELECT * FROM users WHERE username=:un AND password=:pw");
 
-    <title>LOGIN</title>
+$stmt->execute([":un"=>$username, ":pw"=>$password]);
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+$data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-</head>
+if(Isset($data[0]["id"])){
+    $_SESSION["ingelogdALS"] = $data[0]["id"];
+} else {
+    echo "Gebruikersnaam of wachtwoord onbekend";
+}
 
-<body>
-
-<form action="login.php" method="post">
-
-    <h2>LOGIN</h2>
-
-    <?php
-    require('db.php');
-    if (isset($_GET['error'])) { ?>
-
-        <p class="error"><?php echo $_GET['error']; ?></p>
-
-
-    <?php } ?>
-
-    <label>User Name</label>
-
-    <input type="text" name="uname" placeholder="User Name"><br>
-
-    <label>Password</label>
-
-    <input type="password" name="password" placeholder="Password"><br>
-
-    <button type="submit">Login</button>
-
-</form>
-
-</body>
-
-</html>
+if(isset($data [0]["id"])){
+    header("location:https://www.youtube.com/");
+}
