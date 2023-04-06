@@ -1,21 +1,26 @@
 <?php
-// Replace the placeholders with your actual database credentials
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "twitter-clone-project";
 
 // Create a connection to the database
 require("db.php");
 
-// Check if the connection was successful
-//if (!$conn) {
- //   die("Connection failed: " . mysqli_connect_error());
-//}
+
+$servername = "localhost";
+$username = "root";
+$password = "root";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=twitter-clone-project", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//    echo "Connected successfully";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
 
 // Execute the query
 $sql = "SELECT * FROM posts ORDER BY post_id DESC";
-$stmt = $conn->prepare($sql);
+$stmt = $conn ->prepare($sql);
 $stmt->execute();
 
 if (true) {
@@ -28,9 +33,9 @@ if (true) {
             <div class="tweet_links">
                 <img src="Fotos/xxaw.PNG" alt="">
             </div>
-            <div class="tweet_lichaam">
+            <div class="tweet_body">
                 <div class="tweet_header">
-                    <p class="tweet_name">Chirpify</p>
+                    <p class="tweet_name">hazey boy</p>
                     <p class="tweet_username">@bigweenerhaze</p>
                     <p class="tweet_datum"><?php echo $post_date = date('M d'); ?></p>
                 </div>
@@ -45,6 +50,7 @@ if (true) {
                     <a href=""><i class="far fa-chart-bar"></i></a>
                 </div>
             </div>
+
 
             <div class="tweet_del">
                 <div class="dropdown">
